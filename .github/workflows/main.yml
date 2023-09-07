@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/4af8d0da185fae52bf7462bb03563d4d
+          gist_title: 21-MPLAB-BluetoothHm10-4550.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F4550/21_HM_10.X/main.c
+          file_encoding: ISO-8859-1
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/35d57ae092b3537c31147c9d6c55adb0
+          gist_title: 21-MPLAB-BluetoothHm10.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F45K50/21_BT_HM_10.X/main.c
+          file_encoding: ISO-8859-1
